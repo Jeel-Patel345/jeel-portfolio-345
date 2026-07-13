@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../styles/hero.css";
 import profile from "../assets/profile.png";
 import { useCounter } from "../hooks/useCounter";
