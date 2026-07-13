@@ -1,0 +1,44 @@
+/* ==========================
+          FOOTER
+========================== */
+
+.footer {
+  background: #0F0F0F;               /* always near-black — footer is always dark */
+  padding: 60px 10% 40px;
+  text-align: center;
+  border-top: 4px solid var(--primary);
+}
+
+.footer h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.footer > p {
+  color: rgba(255,255,255,0.45);
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+/* Divider */
+.footer-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 2px;
+  margin: 22px auto;
+}
+
+.copyright {
+  margin-top: 28px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 768px) {
+  .footer h2 { font-size: 28px; }
+}

@@ -1,0 +1,187 @@
+/* ============================================================
+   GLOBAL DESIGN TOKENS  –  Off-white & Orange palette
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ---- Light Theme (default) ---- */
+:root,
+[data-theme="light"] {
+  /* Brand */
+  --primary:        #F97316;
+  --primary-dark:   #EA580C;
+  --primary-light:  #FED7AA;
+  --primary-glow:   rgba(249, 115, 22, 0.18);
+
+  /* Surfaces */
+  --background:     #FDF8F3;
+  --surface:        #FFFFFF;
+  --surface-2:      #FFF4EA;
+
+  /* Text */
+  --text:           #1C1917;
+  --text-light:     #78716C;
+  --text-muted:     #A8A29E;
+
+  /* Borders & Shadows */
+  --border:         #E7E0D8;
+  --shadow-sm:      0 2px 8px  rgba(0, 0, 0, 0.06);
+  --shadow:         0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg:      0 24px 50px rgba(0, 0, 0, 0.12);
+
+  /* Shape */
+  --radius:         18px;
+  --radius-sm:      10px;
+
+  /* Mouse glow */
+  --glow-color:     rgba(249, 115, 22, 0.12);
+}
+
+/* ---- Dark Theme ---- */
+[data-theme="dark"] {
+  --primary:        #F97316;
+  --primary-dark:   #EA580C;
+  --primary-light:  rgba(249, 115, 22, 0.25);
+  --primary-glow:   rgba(249, 115, 22, 0.22);
+
+  --background:     #0A0A0A;
+  --surface:        #131313;
+  --surface-2:      #0F0F0F;
+
+  --text:           #F5F0EB;
+  --text-light:     #A09590;
+  --text-muted:     #6B6460;
+
+  --border:         #242220;
+  --shadow-sm:      0 2px 8px  rgba(0, 0, 0, 0.35);
+  --shadow:         0 12px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg:      0 24px 50px rgba(0, 0, 0, 0.65);
+
+  --glow-color:     rgba(249, 115, 22, 0.08);
+}
+
+/* ---- Reset & Base ---- */
+html { scroll-behavior: smooth; }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: .3s;
+  border: none;
+  font-family: inherit;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+/* ---- Utility: orange highlight span ---- */
+.highlight {
+  color: var(--primary);
+}
+
+/* ---- Section heading shared style ---- */
+.section-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+/* ============================================================
+   FADE-ON-SCROLL  –  utility classes
+   ============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered children */
+.fade-up:nth-child(1) { transition-delay: 0ms; }
+.fade-up:nth-child(2) { transition-delay: 80ms; }
+.fade-up:nth-child(3) { transition-delay: 160ms; }
+.fade-up:nth-child(4) { transition-delay: 240ms; }
+.fade-up:nth-child(5) { transition-delay: 320ms; }
+.fade-up:nth-child(6) { transition-delay: 400ms; }
+.fade-up:nth-child(7) { transition-delay: 480ms; }
+.fade-up:nth-child(8) { transition-delay: 560ms; }
+
+/* ============================================================
+   MOUSE GLOW CURSOR BLOB
+   ============================================================ */
+.mouse-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: left 0.12s ease, top 0.12s ease;
+  z-index: 9999;
+  will-change: left, top;
+}
+
+/* ============================================================
+   CARD TILT  –  applied via JS, no extra class needed
+   ============================================================ */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}

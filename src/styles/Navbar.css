@@ -1,0 +1,133 @@
+/* ==========================
+        NAVBAR
+========================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 5%;
+  background: rgba(253, 248, 243, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(231, 224, 216, 0.6);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+
+  z-index: 1000;
+  transition: background 0.4s, border-color 0.4s;
+}
+
+/* Dark navbar */
+[data-theme="dark"] nav {
+  background: rgba(10, 10, 10, 0.92);
+  border-bottom-color: rgba(36, 34, 32, 0.7);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Logo */
+nav h2 {
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+nav h2 span {
+  color: var(--text);
+}
+
+/* Links */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 16px;
+  font-weight: 600;
+  transition: color .25s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+}
+
+/* Animated underline on hover */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 2px;
+  transition: width .3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ---- Theme toggle button ---- */
+.theme-toggle {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.12);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  border-color: var(--primary);
+}
+
+/* Hire-me CTA pill */
+.nav-cta {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff !important;
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-size: 15px !important;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.28);
+  transition: transform .3s, box-shadow .3s !important;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.38) !important;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  nav ul { gap: 20px; }
+  nav ul li a { font-size: 14px; }
+  nav h2 { font-size: 24px; }
+  .theme-toggle { width: 38px; height: 38px; font-size: 17px; }
+}
