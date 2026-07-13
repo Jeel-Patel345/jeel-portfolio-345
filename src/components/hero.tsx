@@ -116,14 +116,7 @@ function Hero({ goToProjects }: HeroProps) {
           <div className="profile-glow"></div>
           <img src={profile} alt="Jeel Patel" className="profile-image" />
 
-          {/* Floating badge */}
-          <div className="badge">
-            <span className="badge-icon">🛡️</span>
-            <div>
-              <div className="badge-text">Secure Solutions</div>
-              <div className="badge-sub">Modern Practices</div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
