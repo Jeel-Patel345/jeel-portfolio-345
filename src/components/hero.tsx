@@ -96,7 +96,7 @@ function Hero({ goToProjects }: HeroProps) {
 
         <div className="buttons-group">
           <div className="buttons">
-            <a href="/sample (4).pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/Jeel-Resume.pdf" target="_blank" rel="noopener noreferrer">
               <button className="primary">View Resume</button>
             </a>
             <button className="secondary" onClick={goToProjects}>View Projects</button>
